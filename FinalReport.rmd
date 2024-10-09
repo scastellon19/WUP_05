@@ -44,14 +44,28 @@ barchartGC(~infected + treatment,data=women)
 barchartGC(~infected + treatment,data=women, type="percent")
 ```
 
+Among women who contracted aids, most of them had undergone treatment. Therefore the treatment was not effective. 
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=women)
+rowPerc(table1)
+colPerc(table1)
+```
+Among the women infected with aids, 58.82% of them received treatment.
 
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 # Discussion and Conclusion
 
