@@ -44,7 +44,7 @@ barchartGC(~infected + treatment,data=women)
 barchartGC(~infected + treatment,data=women, type="percent")
 ```
 
-Among women who contracted aids, most of them had undergone treatment. Therefore the treatment was not effective. 
+Among women who contracted aids, most of them had undergone treatment. Therefore the treatment was not effective in preventing aids. 
 
 ### Numerical Descriptive Results
 
@@ -55,7 +55,7 @@ table1 <- xtabs(~infected + treatment, data=women)
 rowPerc(table1)
 colPerc(table1)
 ```
-Among the women infected with aids, 58.82% of them received treatment.
+Among the women infected with aids, 58.82% of them received the treatment.
 
 ## Inferential Results
 
@@ -67,6 +67,14 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The odds ratio show women who took the treat they are 1.54 times more likely to contract aids then those who did not. The Pearson's Chi-squared test set show the P Value is .0000768 so, The fisher Exact P Value is Pearson's is .00006596, so  we reject the null hypothesis because the P value is lower them 0.05. 
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+According the the bar chart women who contracted aids, most of them had undergone treatment. Therefore the treatment was not effective in preventing aids.      
+The numerical results show women infected with aids, 58.82% of them received the treatment.   
+The Pearson's Chi-squared test set show the P Value is .0000768.   
+The fisher Exact P Value is Pearson's is .00006596
+With this data we reject the null hypothesis because the P value is lower then 0.05. 
